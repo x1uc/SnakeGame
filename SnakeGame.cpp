@@ -1,6 +1,6 @@
 #include "SnakeGame.h"
 
-SnakeGame::SnakeGame()
+SnakeGame::SnakeGame() //初始化的蛇为三个长度
 {
 	while (!snake.empty())
 		snake.pop_back();
@@ -9,7 +9,7 @@ SnakeGame::SnakeGame()
 	snake.push_back({Wight / 2 - 2, Hight / 2});
 }
 
-void SnakeGame::printMap()
+void SnakeGame::printMap()//打印地图与蛇
 {
 	char map[Hight + 1][Wight + 1];
 
@@ -60,7 +60,7 @@ void SnakeGame::printMap()
 	std::cout << ss.str();
 }
 
-void SnakeGame::create_food()
+void SnakeGame::create_food()  //生成食物的坐标，保证不在边界上，并且不在蛇的身体上
 {
 	this->food_x = rand() % Wight + 1;
 	this->food_y = rand() % Hight + 1;
