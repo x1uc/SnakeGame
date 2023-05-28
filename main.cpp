@@ -6,9 +6,9 @@ struct node
 	bool operator<(const node &p)
 	{
 		return this->score > p.score;
-	}
+	} // 函数重载 以至于sort可以降序输出
 };
-node rank_list[5000];
+node rank_list[5000];  //新加的排行榜模块
 int main()
 {
 	SnakeGame G1;
