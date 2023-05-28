@@ -12,14 +12,14 @@ node rank_list[5000];  //新加的排行榜模块
 int main()
 {
 	SnakeGame G1;
-	cout << "draw you name" << endl;
+	cout << "draw you name" << endl;  //输入你的名字 名字和分数会加入后续的排行榜
 	string name;
 	cin >> name;
 	cin.ignore();
-	cout << "press 'w' play game" << endl;
+	cout << "press 'w' play game" << endl;    
 	cout << "w up s down a left d right" << endl;
-	G1.game_loop();
-	ofstream ofs;
+	G1.game_loop();  //游戏主体
+	ofstream ofs;  //游戏结束后把 名字和分数写入文件中保存，以至于下次运行的时候你之前的游戏数据还在排行榜中
 	ofs.open("filename.txt", ios::out | ios::app);
 	ofs << name << ' ' << G1.getScore() << endl;
 	ofs.close();
