@@ -32,12 +32,12 @@ public:
 					 // 搜索后发现 直接把光标移动到(0,0) 然后输出 可以解决屏幕闪烁问题
 
 private:
-	deque<Snake> snake;
-	HANDLE hOut;
-	COORD pos;
-	double spped = 200;
-	int food_x, food_y;
-	int score = 0;
-	bool fist_op = true;
-	char dir;
+	deque<Snake> snake;  //一个双端的队列 ，来存储蛇身体每一块的坐标
+	HANDLE hOut;         //移动光标需要的
+	COORD pos;	     //同上，实际没用上，我在SetPos函数中重写了一个			
+	double spped = 200;  //本来想加一个选择速度的功能，最后懒得加了，配合game_loop中的sleep可以控制刷新速度
+	int food_x, food_y;  //食物的坐标
+	int score = 0;       // 分数
+	bool fist_op = true; // 如果时第一次操作需要尽心一些操作，后面实现时发现也是脱裤子放屁
+	char dir;            // 贪吃蛇当前前进的方向
 };
