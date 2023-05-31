@@ -64,7 +64,7 @@ void SnakeGame::create_food()  //生成食物的坐标，保证不在边界上�
 {
 	this->food_x = rand() % Wight + 1;
 	this->food_y = rand() % Hight + 1;
-	while ((this->food_x == 1 || this->food_x == Wight) || (this->food_y == 1 || this->food_y == Wight))
+	while ((this->food_x == 1 || this->food_x == Wight) || (this->food_y == 1 || this->food_y == Hight))
 	{
 		this->food_x = rand() % Wight + 1;
 		this->food_y = rand() % Hight + 1;
@@ -85,7 +85,7 @@ void SnakeGame::create_food()  //生成食物的坐标，保证不在边界上�
 		{
 			this->food_x = rand() % Wight + 1;
 			this->food_y = rand() % Hight + 1;
-			while ((this->food_x == 1 || this->food_x == Wight) || (this->food_y == 1 || this->food_y == Wight))
+			while ((this->food_x == 1 || this->food_x == Wight) || (this->food_y == 1 || this->food_y == Hight))
 			{
 				this->food_x = rand() % Wight + 1;
 				this->food_y = rand() % Hight + 1;
