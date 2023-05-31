@@ -11,17 +11,31 @@ struct node
 node rank_list[5000];  //新加的排行榜模块
 int main()
 {
-	SnakeGame G1;
+	SnakeGame *G1;
 	cout << "draw you name" << endl;  //输入你的名字 名字和分数会加入后续的排行榜
 	string name;
 	cin >> name;
-	cin.ignore();
-	cout << "press 'w' play game" << endl;    
-	cout << "w up s down a left d right" << endl;
-	G1.game_loop();  //游戏主体
+
+	
+	while (1)
+	{	
+		G1 = new SnakeGame;
+		cin.ignore();
+		system("cls");
+		cout << "press 'w' play game" << endl;    
+		cout << "w up s down a left d right" << endl;
+		(*G1).game_loop();  //游戏主体
+		cout << "again press 1 ,quit press 2" << endl;
+		int op_quit=0;
+		cin >> op_quit;
+		if (op_quit == 2)
+			break;
+		if (G1 != NULL)
+			delete G1;
+	}
 	ofstream ofs;  //游戏结束后把 名字和分数写入文件中保存，以至于下次运行的时候你之前的游戏数据还在排行榜中
 	ofs.open("filename.txt", ios::out | ios::app);
-	ofs << name << ' ' << G1.getScore() << endl;
+	ofs << name << ' ' << (*G1).getScore() << endl;
 	ofs.close();
 	ifstream ifs;
 	ifs.open("filename.txt", ios::in);
