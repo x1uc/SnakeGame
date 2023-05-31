@@ -147,7 +147,7 @@ void SnakeGame::game_loop()
 		}
 		snake.push_front(Head_snake);
 		Sleep(80);
-		system("cls");
+		//system("cls");
 		this->SetPos(0, 0);
 		printMap();
 	}
